@@ -1,0 +1,134 @@
+header {
+  height: 64px;
+  width: 100%;
+  background-color: $white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 24px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .logo {
+    height: 24px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+
+    height: calc(100vh - 64px);
+    width: 100%;
+    overflow: hidden;
+
+    padding: 24px;
+
+    transform: translateY(-120%);
+    transition: transform 0s linear 0.4s;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+
+      background: linear-gradient(
+        to bottom,
+        rgba($color: #000000, $alpha: 0.5),
+        transparent
+      );
+    }
+
+    &.is-active {
+      transform: translateY(0%);
+      transition: none;
+    }
+
+    &.is-active::before {
+      opacity: 1;
+    }
+
+    &.is-active ul {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      z-index: 10;
+
+      background-color: $white;
+      border-radius: 5px;
+
+      width: 100%;
+      padding: 1.25rem;
+
+      opacity: 0;
+      transform: translateX(100%);
+      transform-origin: top;
+
+      transition-property: transform, opacity;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.4s;
+
+      li {
+        width: max-content;
+
+        padding: 0.75rem;
+
+        font-size: 19px;
+        line-height: 19px;
+        font-weight: 400;
+        color: $dark-blue;
+        cursor: pointer;
+        text-align: center;
+
+        margin-bottom: 2px;
+
+        position: relative;
+
+        &::after {
+          content: "";
+          display: flex;
+
+          position: absolute;
+          bottom: 0.1rem;
+          left: 0;
+          z-index: 100;
+          height: 4px;
+          background: linear-gradient(to right, $lime-green, $bright-cyan);
+
+          border-radius: 2px;
+          width: 100%;
+
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 0.2s ease-in-out;
+        }
+
+        &:hover::after {
+          transform: scaleX(100%);
+        }
+      }
+    }
+  }
+}

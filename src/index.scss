@@ -9,14 +9,19 @@
   font-family: "Public Sans", sans-serif;
 }
 
+// body {
+//   background-color: #18181a;
+// }
+
 .app {
   max-width: 1440px;
-  background-color: rebeccapurple;
-  height: 500vh;
+  margin: 0 auto;
+  position: relative;
 }
 
-.no-overflow {
-  overflow: hidden;
+// Disable scrolling on mobile
+.no-touch-action {
+  touch-action: none;
 }
 
 ul {

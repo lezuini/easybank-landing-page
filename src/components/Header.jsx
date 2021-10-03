@@ -21,9 +21,9 @@ const Header = () => {
 
   useEffect(() => {
     if (isActive) {
-      document.body.classList.add("no-overflow");
+      document.body.classList.add("no-touch-action");
     } else {
-      document.body.classList.remove("no-overflow");
+      document.body.classList.remove("no-touch-action");
     }
   }, [isActive]);
 
@@ -54,6 +54,8 @@ const Header = () => {
           <span className="hamburger-inner"></span>
         </span>
       </button>
+
+      <button className="request-btn">Request Invite</button>
     </header>
   );
 };

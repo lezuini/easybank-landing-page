@@ -1,0 +1,22 @@
+.request-btn {
+  height: 44px;
+  width: 164px;
+  border: none;
+  border-radius: 22px;
+  overflow: hidden;
+
+  background: linear-gradient(to right, $lime-green, $bright-cyan);
+
+  font-size: 15px;
+  line-height: 15px;
+  padding-bottom: 1px;
+  font-weight: 700;
+  color: $white;
+  cursor: pointer;
+
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

@@ -15,7 +15,7 @@ header {
   z-index: 100;
 
   .logo {
-    height: 24px;
+    height: 100%;
 
     display: flex;
     justify-content: flex-start;
@@ -33,7 +33,7 @@ header {
 
     padding: 24px;
 
-    transform: translateY(-120%);
+    transform: translateY(calc(-100vh - 64px));
     transition: transform 0s linear 0.4s;
 
     &::before {
@@ -79,7 +79,9 @@ header {
       background-color: $white;
       border-radius: 5px;
 
+      margin-left: auto;
       width: 100%;
+      max-width: 500px;
       padding: 1.25rem;
 
       opacity: 0;
@@ -129,6 +131,79 @@ header {
           transform: scaleX(100%);
         }
       }
+    }
+  }
+
+  .request-btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header {
+    height: 80px;
+    padding: 0 80px;
+
+    nav {
+      position: static;
+
+      height: 100%;
+      width: max-content;
+      padding: 0;
+
+      transform: translateY(0%);
+
+      &::before {
+        content: none;
+      }
+
+      ul {
+        flex-direction: row;
+        padding: 0;
+        height: 100%;
+        opacity: 1;
+        transform: translateX(0);
+
+        li {
+          height: 100%;
+          margin-bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0.75rem 0;
+          margin: 0 0.75rem;
+
+          font-size: 15px;
+          line-height: 15px;
+
+          color: $grayish-blue;
+
+          transition: color 0.2s ease-in-out;
+
+          &:hover {
+            color: $dark-blue;
+          }
+
+          &::after {
+            bottom: 0;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  header {
+    padding: 0 164px;
+
+    .request-btn {
+      display: block;
     }
   }
 }

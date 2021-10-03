@@ -1,41 +1,19 @@
 import "./App.scss";
 
 import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import Articles from "./components/Articles";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <main className="app">
       <Header />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, provident
-        rerum cumque est a consectetur laboriosam, recusandae facere velit cum
-        ratione suscipit illum quisquam sed in itaque totam nostrum odit!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, provident
-        rerum cumque est a consectetur laboriosam, recusandae facere velit cum
-        ratione suscipit illum quisquam sed in itaque totam nostrum odit!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, provident
-        rerum cumque est a consectetur laboriosam, recusandae facere velit cum
-        ratione suscipit illum quisquam sed in itaque totam nostrum odit!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, provident
-        rerum cumque est a consectetur laboriosam, recusandae facere velit cum
-        ratione suscipit illum quisquam sed in itaque totam nostrum odit!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, provident
-        rerum cumque est a consectetur laboriosam, recusandae facere velit cum
-        ratione suscipit illum quisquam sed in itaque totam nostrum odit!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, provident
-        rerum cumque est a consectetur laboriosam, recusandae facere velit cum
-        ratione suscipit illum quisquam sed in itaque totam nostrum odit!
-      </p>
+      <Hero />
+      <Features />
+      <Articles />
+      <Footer />
     </main>
   );
 }

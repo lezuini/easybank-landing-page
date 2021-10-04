@@ -1,9 +1,18 @@
+import { useState } from "react";
+
 import Currency from "../images/image-currency.jpg";
 import Restaurant from "../images/image-restaurant.jpg";
 import Plane from "../images/image-plane.jpg";
 import Confetti from "../images/image-confetti.jpg";
 
 const Articles = () => {
+  const [visible, setVisible] = useState({});
+
+  // Make images visible when finished loading
+  const handleVisible = (index) => {
+    setVisible({ ...visible, [index]: true });
+  };
+
   return (
     <section className="articles">
       <div className="container">
@@ -11,7 +20,14 @@ const Articles = () => {
         <div className="posts">
           <div className="post">
             <div className="img">
-              <img src={Currency} alt="Currency" />
+              <img
+                src={Currency}
+                alt="Currency"
+                onLoad={() => {
+                  handleVisible(0);
+                }}
+                className={visible[0] ? "visible" : undefined}
+              />
             </div>
             <div className="text">
               <span>By Claire Robinson</span>
@@ -24,7 +40,14 @@ const Articles = () => {
           </div>
           <div className="post">
             <div className="img">
-              <img src={Restaurant} alt="Restaurant" />
+              <img
+                src={Restaurant}
+                alt="Restaurant"
+                onLoad={() => {
+                  handleVisible(1);
+                }}
+                className={visible[1] ? "visible" : undefined}
+              />
             </div>
             <div className="text">
               <span>By Wilson Hutton</span>
@@ -37,7 +60,14 @@ const Articles = () => {
           </div>
           <div className="post">
             <div className="img">
-              <img src={Plane} alt="Plane" />
+              <img
+                src={Plane}
+                alt="Plane"
+                onLoad={() => {
+                  handleVisible(2);
+                }}
+                className={visible[2] ? "visible" : undefined}
+              />
             </div>
             <div className="text">
               <span>By Wilson Hutton</span>
@@ -50,7 +80,14 @@ const Articles = () => {
           </div>
           <div className="post">
             <div className="img">
-              <img src={Confetti} alt="Confetti" />
+              <img
+                src={Confetti}
+                alt="Confetti"
+                onLoad={() => {
+                  handleVisible(3);
+                }}
+                className={visible[3] ? "visible" : undefined}
+              />
             </div>
             <div className="text">
               <span>By Claire Robinson</span>

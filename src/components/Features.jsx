@@ -1,9 +1,18 @@
+import { useState } from "react";
+
 import IconOnline from "../images/icon-online.svg";
 import IconBudgeting from "../images/icon-budgeting.svg";
 import IconOnboarding from "../images/icon-onboarding.svg";
 import IconAPI from "../images/icon-api.svg";
 
 const Features = () => {
+  const [visible, setVisible] = useState({});
+
+  // Make images visible when finished loading
+  const handleVisible = (index) => {
+    setVisible({ ...visible, [index]: true });
+  };
+
   return (
     <section className="features">
       <div className="container">
@@ -14,7 +23,14 @@ const Features = () => {
         </p>
         <ul>
           <li>
-            <img src={IconOnline} alt="Online Banking" />
+            <img
+              src={IconOnline}
+              alt="Online Banking"
+              onLoad={() => {
+                handleVisible(0);
+              }}
+              className={visible[0] ? "visible" : undefined}
+            />
             <h3>Online Banking</h3>
             <p>
               Our modern web and mobile applications allow you to keep track of
@@ -22,7 +38,14 @@ const Features = () => {
             </p>
           </li>
           <li>
-            <img src={IconBudgeting} alt="Simple Budgeting" />
+            <img
+              src={IconBudgeting}
+              alt="Simple Budgeting"
+              onLoad={() => {
+                handleVisible(1);
+              }}
+              className={visible[1] ? "visible" : undefined}
+            />
             <h3>Simple Budgeting</h3>
             <p>
               See exactly where your money goes each month. Receive
@@ -30,7 +53,14 @@ const Features = () => {
             </p>
           </li>
           <li>
-            <img src={IconOnboarding} alt="Fast Onboarding" />
+            <img
+              src={IconOnboarding}
+              alt="Fast Onboarding"
+              onLoad={() => {
+                handleVisible(2);
+              }}
+              className={visible[2] ? "visible" : undefined}
+            />
             <h3>Fast Onboarding</h3>
             <p>
               We don’t do branches. Open your account in minutes online and
@@ -38,7 +68,14 @@ const Features = () => {
             </p>
           </li>
           <li>
-            <img src={IconAPI} alt="Open API" />
+            <img
+              src={IconAPI}
+              alt="Open API"
+              onLoad={() => {
+                handleVisible(3);
+              }}
+              className={visible[3] ? "visible" : undefined}
+            />
             <h3>Open API</h3>
             <p>
               Manage your savings, investments, pension, and much more from one

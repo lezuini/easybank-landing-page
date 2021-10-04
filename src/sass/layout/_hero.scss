@@ -1,6 +1,5 @@
 .hero {
   background-color: $very-light-gray;
-  // height: 672px;
 
   display: flex;
   flex-direction: column;
@@ -9,7 +8,10 @@
 
   .mockup-container {
     position: relative;
-    height: 100%;
+    height: 281px;
+    width: 100%;
+
+    margin-bottom: 41px;
   }
   .mockup-container-inner {
     position: absolute;
@@ -28,6 +30,13 @@
     align-items: center;
 
     margin-bottom: 2.75rem;
+
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+    }
 
     .background {
       width: 100%;
@@ -71,11 +80,11 @@
     .container {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: center;
       justify-content: flex-start;
       margin-right: auto;
 
-      width: 480px;
+      width: 100%;
     }
 
     h1 {
@@ -91,7 +100,7 @@
     }
 
     p {
-      font-size: 16px;
+      font-size: 15px;
       line-height: 25px;
       color: $grayish-blue;
       text-align: center;
@@ -102,7 +111,7 @@
     }
 
     .request-btn {
-      margin-bottom: 4rem;
+      margin-bottom: 5.5rem;
     }
   }
 }
@@ -113,11 +122,6 @@
       .img {
         width: 342px;
       }
-    }
-
-    h1 {
-      font-size: 40px;
-      line-height: 47px;
     }
   }
 }
@@ -131,15 +135,39 @@
         }
       }
     }
+
+    .intro {
+      .container {
+        h1 {
+          font-size: 40px;
+          line-height: 47px;
+        }
+      }
+    }
   }
 }
+
 @media screen and (min-width: 376px) {
   .hero {
-    .mockup {
+    .mockup-container {
       height: 320px;
 
-      .img {
-        width: 386px;
+      .mockup {
+        height: 320px;
+
+        .img {
+          width: 386px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .hero {
+    .intro {
+      .container {
+        padding: 0 1rem;
       }
     }
   }
@@ -160,8 +188,15 @@
         width: 420px;
       }
     }
+
+    .intro {
+      .container {
+        padding: 0 2rem;
+      }
+    }
   }
 }
+
 @media screen and (min-width: 500px) {
   .hero {
     .mockup {
@@ -187,7 +222,7 @@
 
       .background {
         .mobile {
-          transform: translateY(110px);
+          transform: translateY(124px);
         }
       }
 
@@ -195,9 +230,16 @@
         width: 514px;
       }
     }
+
+    .intro {
+      .container {
+        max-width: 700px;
+      }
+    }
   }
 }
 
+// Tablet
 @media screen and (min-width: 768px) {
   .hero {
     width: 100%;
@@ -206,51 +248,56 @@
     direction: rtl;
     height: 474px;
 
-    .mockup-container-inner {
-      height: 560px;
-      width: 500px;
-      overflow-x: hidden;
+    .mockup-container {
+      height: 100%;
+      margin-bottom: 0;
+
+      .mockup {
+        width: 308px;
+        height: 560px;
+        position: absolute;
+        justify-content: flex-start;
+        margin-bottom: 0;
+
+        .background {
+          height: 430px;
+          justify-content: flex-start;
+
+          .mobile {
+            display: none;
+          }
+          .desktop {
+            display: block;
+            width: 300px;
+            transform: scale(1.6);
+          }
+        }
+
+        .img {
+          height: 430px;
+          align-items: center;
+          width: 460px;
+
+          transform: translateX(40px);
+        }
+      }
     }
 
-    .mockup {
-      width: 308px;
-      height: 560px;
-      position: absolute;
-      justify-content: flex-start;
-
-      // height: 100%;
-
-      .background {
-        height: 430px;
-        // width: 80%;
-        justify-content: flex-start;
-
-        .mobile {
-          display: none;
-        }
-        .desktop {
-          display: block;
-          width: 300px;
-          transform: scale(1.6);
-        }
-      }
-
-      .img {
-        height: 430px;
-        // width: 80%;
-        align-items: center;
-        width: 100%;
-
-        img {
-          transform: scale(1.6) translateX(20px);
-        }
-        // display: none;
-      }
+    .mockup-container-inner {
+      height: 800px;
+      width: 500px;
+      overflow-x: hidden;
     }
 
     .intro {
       padding: 0 80px;
       align-items: flex-end;
+
+      .container {
+        max-width: 376px;
+        padding: 0;
+        align-items: flex-end;
+      }
 
       h1,
       p {
@@ -265,6 +312,52 @@
   }
 }
 
+@media screen and (min-width: 960px) {
+  .hero {
+    .mockup-container {
+      .mockup {
+        .background {
+          .desktop {
+            width: 380px;
+            transform: scale(2) translateX(20px) translateY(30px);
+          }
+        }
+
+        .img {
+          width: 500px;
+
+          transform: translateX(0px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .hero {
+    .mockup-container {
+      .mockup {
+        .background {
+          .desktop {
+            width: 440px;
+            transform: scale(2) translateX(0px) translateY(0px);
+          }
+        }
+
+        .img {
+          width: 560px;
+
+          transform: translateX(-10px);
+        }
+      }
+    }
+
+    .mockup-container-inner {
+      width: 700px;
+    }
+  }
+}
+
 @media screen and (min-width: 1168px) {
   .hero {
     height: 656px;
@@ -272,36 +365,50 @@
 
     .intro {
       padding-right: 0;
+      direction: ltr;
 
-      h1 {
-        font-size: 56px;
-        line-height: 63px;
+      .container {
+        margin-right: 0;
+        max-width: 490px;
+        align-items: flex-start;
 
-        margin-bottom: 26px;
-      }
+        h1 {
+          font-size: 56px;
+          line-height: 63px;
 
-      p {
-        font-size: 19px;
-        line-height: 28px;
+          margin-bottom: 26px;
+        }
 
-        margin-bottom: 35px;
+        p {
+          font-size: 19px;
+          line-height: 28px;
+
+          margin-bottom: 35px;
+        }
       }
     }
 
     .mockup-container-inner {
-      height: 1200px;
+      height: 800px;
       width: 100%;
     }
 
-    .mockup {
-      .background {
-        .desktop {
-          transform: scale(3) translateX(-8px) translateY(74px);
+    .mockup-container {
+      .mockup {
+        width: 100%;
+        height: 656px;
+
+        .background {
+          .desktop {
+            width: 380px;
+            transform: scale(2.2) translateX(40px) translateY(80px);
+          }
         }
-      }
-      .img {
-        img {
-          transform: scale(2.5) translateX(30px) translateY(20px);
+
+        .img {
+          width: 680px;
+
+          transform: translateX(130px) translateY(40px);
         }
       }
     }
@@ -311,40 +418,49 @@
 @media screen and (min-width: 1280px) {
   .hero {
     .intro {
-      padding: 0 0 0 120px;
+      padding-left: 120px;
     }
 
-    .mockup {
-      .background {
-        .desktop {
-          transform: scale(3) translateX(-30px) translateY(74px);
+    .mockup-container {
+      .mockup {
+        .background {
+          .desktop {
+            width: 380px;
+            transform: scale(2.5) translateX(40px) translateY(70px);
+          }
         }
-      }
-      .img {
-        img {
-          transform: scale(2.5) translateX(10px) translateY(30px);
+
+        .img {
+          width: 760px;
+
+          transform: translateX(120px) translateY(40px);
         }
       }
     }
   }
 }
+
 @media screen and (min-width: 1360px) {
   .hero {
     grid-template-columns: 55% 45%;
 
-    .intro {
-      padding: 0 0 0 120px;
+    .mockup-container-inner {
+      height: 900px;
     }
 
-    .mockup {
-      .background {
-        .desktop {
-          transform: scale(4.2) translateX(6px) translateY(32px);
+    .mockup-container {
+      .mockup {
+        .background {
+          .desktop {
+            width: 380px;
+            transform: scale(3.2) translateX(60px) translateY(29px);
+          }
         }
-      }
-      .img {
-        img {
-          transform: scale(2.5) translateX(-18px) translateY(50px);
+
+        .img {
+          width: 767px;
+
+          transform: translateX(142px) translateY(118px);
         }
       }
     }
@@ -354,7 +470,7 @@
 @media screen and (min-width: 1400px) {
   .hero {
     .intro {
-      padding: 0 0 0 164px;
+      padding-left: 164px;
     }
   }
 }

@@ -2,8 +2,6 @@
 
 This is a solution to the [Easybank landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN).
 
-_It's not finished yet!_
-
 ## Links 🔗
 
 - Solution URL: [Repository](https://github.com/leonardomeza87/easybank-landing-page)
@@ -23,7 +21,6 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup.
-- CSS custom properties.
 - Flexbox.
 - CSS Grid.
 - Mobile-first workflow.
@@ -32,7 +29,7 @@ Users should be able to:
 
 ### Useful resources
 
-- ...
+- [Setting overflow-x: hidden adds a vertical scrollbar](https://stackoverflow.com/questions/6179831/setting-overflow-x-hidden-adds-a-vertical-scrollbar)
 
 ### More about me
 

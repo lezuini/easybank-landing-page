@@ -36,6 +36,15 @@
 
       img {
         margin-bottom: 1.75rem;
+        width: 72px;
+        height: 72px;
+
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+
+        &.visible {
+          opacity: 1;
+        }
       }
 
       h3 {
@@ -69,6 +78,11 @@
   .features {
     padding: 2rem 4rem;
 
+    .container > p {
+      max-width: 560px;
+      margin: 0 auto 3.5rem;
+    }
+
     ul {
       display: flex;
       flex-direction: row;
@@ -95,10 +109,10 @@
 }
 @media screen and (min-width: 1168px) {
   .features {
-    padding: 2rem 40px;
+    padding: 2rem 80px;
 
     .container {
-      max-width: 1110px;
+      max-width: 1030px;
       margin: 0 auto;
 
       h2 {
@@ -111,23 +125,26 @@
       h2,
       > p {
         text-align: left;
-        // padding-left: 16px;
       }
 
       > p {
         width: 690px;
+        max-width: 690px;
         font-size: 19px;
         line-height: 28px;
         margin-bottom: 71px;
+        margin-left: 0;
       }
     }
 
     ul {
       justify-content: space-between;
+      align-items: flex-start;
+
       li {
         align-items: flex-start;
-        width: 256px;
-        max-width: 256px;
+        width: 236px;
+        max-width: 236px;
         margin: 0;
 
         img {
@@ -151,8 +168,26 @@
   }
 }
 
+@media screen and (min-width: 1220px) {
+  .features {
+    .container {
+      max-width: 1070px;
+    }
+    ul {
+      li {
+        width: 246px;
+        max-width: 246px;
+        margin: 0;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1300px) {
   .features {
+    .container {
+      max-width: 1110px;
+    }
     ul {
       li {
         width: 256px;
